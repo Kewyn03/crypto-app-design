@@ -1,5 +1,167 @@
-.App {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
+  background: black;
+}
+
+[class*=__container] {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  min-height: 73px;
+}
+
+@media (max-width: 1310px) {
+  [class*=__container] {
+    max-width: 1000px;
+  }
+}
+@media (max-width: 960px) {
+  [class*=__container] {
+    max-width: 750px;
+  }
+}
+.header__menu {
+  flex: 1 1 auto;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu__list {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 14px;
+  color: #FFFFFF;
+  display: flex;
+  gap: 32px;
+}
+
+@media (max-width: 960px) {
+  .header__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    transition: top 0.3s ease 0s;
+    overflow: auto;
+    padding: 100px 15px 30px 15px;
+  }
+  .header__menu._active {
+    top: 0;
+  }
+  .menu {
+    display: block;
+  }
+  .menu__list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+}
+.header__button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 0 0 200px;
+  gap: 9px;
+}
+
+@media (max-width: 960px) {
+  .header__button {
+    flex: 1 1 auto;
+  }
+}
+.button {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding: 7px 17px;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+}
+
+.button-gradient {
+  border: none;
+  background: linear-gradient(225deg, #18C8FF 14.89%, #933FFE 85.85%);
+}
+
+.main {
+  height: 600px;
+  flex: 1 1 auto;
+}
+
+.green__gradient {
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+  background: url("assets/images/green-gradient.png") 0 0 no-repeat;
+}
+
+.burger {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    flex: 0 0 30px;
+    height: 18px;
+    z-index: 5;
+  }
+  .burger span {
+    height: 2px;
+    background-color: #FFFFFF;
+  }
+  .burger::before, .burger::after {
+    content: "";
+    background-color: #FFFFFF;
+    height: 2px;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
