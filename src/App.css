@@ -46,6 +46,17 @@ a {
   display: flex;
   align-items: center;
   min-height: 73px;
+  transition: ease 0.5s;
+}
+
+.header__container.round {
+  background: linear-gradient(225deg, #34e89e 14.89%, #0f3443 85.85%);
+  border-radius: 40px;
+  transform: translateY(50px);
+  padding: 0 60px 0;
+}
+.header__container.round .menu__list {
+  gap: 20px;
 }
 
 @media (max-width: 1310px) {
@@ -128,7 +139,7 @@ a {
 }
 
 .main {
-  height: 600px;
+  height: 1600px;
   flex: 1 1 auto;
 }
 
